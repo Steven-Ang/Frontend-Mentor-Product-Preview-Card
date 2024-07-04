@@ -1,3 +1,12 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --grey: hsl(228, 12%, 48%);
+  --black: hsl(212, 21%, 14%);
+  --active-color: hsl(157, 44%, 20%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,5 +15,137 @@
 
 html {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--cream);
+  color: var(--grey);
+}
+
+body,
+button {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.product-container {
+  display: flex;
+  background-color: var(--white);
+  margin: 1rem 5%;
+  border-radius: 0.5rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+}
+
+.product-content {
+  padding: 1rem 1.7rem;
+}
+
+.product-category {
+  letter-spacing: 0.3ch;
+  text-transform: uppercase;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.product-title,
+.product-description,
+.product-price-section {
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--black);
+}
+
+.product-title,
+.product-current-price {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+.product-description {
+  line-height: 1.4;
+}
+
+.product-price-section {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.product-current-price {
+  font-size: 2rem;
+  color: var(--dark-cyan);
+}
+
+.product-previous-price {
+  text-decoration: line-through;
+}
+
+.product-add-to-cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  padding: 1rem 0.5rem;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.product-add-to-cart-button:hover,
+.product-add-to-cart-button:focus,
+.product-add-to-cart-button:active {
+  background-color: var(--active-color);
+}
+
+@media (min-width: 600px) {
+  .product-container {
+    margin: 0 5%;
+  }
+
+  .product {
+    flex-direction: row;
+    max-width: 35rem;
+  }
+
+  .product-image img {
+    height: 100%;
+    min-width: 16rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .product-title,
+  .product-description,
+  .product-price-section {
+    margin-bottom: 1.6rem;
+  }
 }
